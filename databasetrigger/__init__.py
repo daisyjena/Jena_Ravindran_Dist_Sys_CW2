@@ -13,7 +13,7 @@ def main(databasetrigger) -> None:
 
         cursor = conn.cursor()
         
-        # Modified query to select Temperature and Humidity, and calculate max, min, avg
+        
         select_query = """
         SELECT 
             MAX(Temperature) AS MaxTemperature, 
@@ -24,12 +24,9 @@ def main(databasetrigger) -> None:
             AVG(Humidity) AS AvgHumidity
         FROM SensorData
         """
-        
-        # Execute the query
         cursor.execute(select_query)
         result = cursor.fetchone()
 
-        # Log the results
         if result:
             logging.info(f"Temperature - Max: {result.MaxTemperature}, Min: {result.MinTemperature}, Avg: {result.AvgTemperature}")
             logging.info(f"Humidity - Max: {result.MaxHumidity}, Min: {result.MinHumidity}, Avg: {result.AvgHumidity}")
