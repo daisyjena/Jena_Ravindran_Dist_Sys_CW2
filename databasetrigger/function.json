@@ -1,0 +1,15 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "name": "databasetrigger",
+        "type": "sqlTrigger",               
+        "direction": "in",                   
+        "connectionStringSetting": "CONNECTION_STRING_DATABASETRIGGER",  
+        "tableName": "SensorData",         
+        "pollingIntervalMs": 15000,         
+        "maxBatchSize": 10                  
+      }
+    ]
+  }
+  
